@@ -55,6 +55,7 @@ class i2c extends EventEmitter
     @setAddress @address
     wire.readByte callback
 
+###
   readBytes: (cmd, len, callback) ->
     @setAddress @address
     wire.readBlock cmd, len, null, callback
@@ -71,5 +72,6 @@ class i2c extends EventEmitter
           cmd        : cmd
           length     : len
           timestamp  : Date.now()
+###
 
 module.exports = i2c

@@ -118,6 +118,7 @@ Handle<Value> ReadByte(const Arguments& args) {
   return scope.Close(data);
 }
 
+/*
 Handle<Value> ReadBlock(const Arguments& args) {
   HandleScope scope;
 
@@ -155,6 +156,7 @@ Handle<Value> ReadBlock(const Arguments& args) {
   }
   return scope.Close(actualBuffer);
 }
+*/
 
 
 Handle<Value> WriteByte(const Arguments& args) {
@@ -249,9 +251,9 @@ void Init(Handle<Object> target) {
   target->Set(String::NewSymbol("readByte"),
     FunctionTemplate::New(ReadByte)->GetFunction());
 
-  target->Set(String::NewSymbol("readBlock"),
-    FunctionTemplate::New(ReadBlock)->GetFunction());
-
+//  target->Set(String::NewSymbol("readBlock"),
+//    FunctionTemplate::New(ReadBlock)->GetFunction());
+//
 }
 
 NODE_MODULE(i2c, Init)
